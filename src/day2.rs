@@ -39,7 +39,8 @@ pub fn read_lines_2(path: &str) -> Result<u32> {
     Ok(total)
 }
 
-pub async fn day2_res(path: &str) {
+pub async fn day2_res(path: &str) -> Result<u32> {
     let res = read_lines_2(path);
     println!("{:#?}", res);
+    res
 }
