@@ -39,7 +39,7 @@ pub fn read_lines_2(path: &str) -> Result<u32> {
     Ok(total)
 }
 
-pub async fn day2_res() {
-    let res = read_lines_2("/Users/baber/Downloads/day2.txt");
+pub async fn day2_res(path: &str) {
+    let res = read_lines_2(path);
     println!("{:#?}", res);
 }

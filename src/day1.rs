@@ -29,14 +29,15 @@ pub fn part2(input: &Day1Lists) -> Result<u32> {
     Ok(res)
 }
 
-async fn day1_res() {
-    let res = read_lists("/Users/baber/Downloads/input.txt").unwrap();
+async fn day1_res(path: &str) -> Result<()> {
+    let res = read_lists(path)?;
     let res_clone = res.clone();
     let handle1 = tokio::spawn(tokio::task::spawn_blocking(move || part1(&res)));
     let handle2 = tokio::spawn(tokio::task::spawn_blocking(move || part2(&res_clone)));
 
     let (part1_, part2_) = tokio::join!(handle1, handle2);
 
-    println!("{:?}", part1_.unwrap().unwrap());
-    println!("{:?}", part2_.unwrap().unwrap());
+    println!("{:?}", part1_.unwrap()?);
+    println!("{:?}", part2_.unwrap()?);
+    Ok(())
 }
