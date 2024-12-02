@@ -13,7 +13,7 @@ pub fn check_increasing_decreasing(numbers: &[u32]) -> bool {
 
     valid
 }
-pub fn read_lines_2(path: &str) -> Result<i32> {
+pub fn read_lines_2(path: &str) -> Result<u32> {
     let mut total = 0;
     for line in read_to_string(path)?.lines() {
         let numbers: Vec<u32> = line
