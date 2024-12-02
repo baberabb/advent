@@ -1,17 +1,18 @@
 use std::fs::read_to_string;
 pub mod day1;
+pub mod day2;
 
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
 
 #[derive(Debug, Clone)]
-pub struct Lists {
+pub struct Day1Lists {
     pub list1: Vec<u32>,
     pub list2: Vec<u32>,
 }
 
-pub fn read_lists(path: &str) -> anyhow::Result<Lists> {
+pub fn read_lists(path: &str) -> anyhow::Result<Day1Lists> {
     let mut line1 = Vec::new();
     let mut line2 = Vec::new();
 
@@ -23,7 +24,7 @@ pub fn read_lists(path: &str) -> anyhow::Result<Lists> {
         line1.push(numbers[0]);
         line2.push(numbers[1]);
     }
-    Ok(Lists {
+    Ok(Day1Lists {
         list1: line1,
         list2: line2,
     })
